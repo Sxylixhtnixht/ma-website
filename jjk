@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Jujutsu Kaisen Intro</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  height:100vh;
+  overflow:hidden;
+  font-family:'Orbitron',sans-serif;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  color:white;
+  position:relative;
+}
+
+/* JJK BACKGROUND IMAGE */
+.background{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:url("https://images6.alphacoders.com/134/thumb-1920-1345576.jpeg") center/cover no-repeat;
+  z-index:-2;
+}
+
+/* Dark overlay */
+.overlay{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.7);
+  z-index:-1;
+}
+
+.container{
+  text-align:center;
+}
+
+/* Title */
+.title{
+  font-size:5rem;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:5px;
+  position:relative;
+  color:white;
+  text-shadow:
+    0 0 10px #a200ff,
+    0 0 20px #6a00ff,
+    0 0 40px #4b0082;
+  animation:flicker 2s infinite alternate;
+}
+
+.title::before,
+.title::after{
+  content:"JUJUTSU KAISEN";
+  position:absolute;
+  left:0;
+  width:100%;
+}
+
+.title::before{
+  color:#ff00c8;
+  z-index:-1;
+  animation:glitchTop 2s infinite linear alternate-reverse;
+}
+
+.title::after{
+  color:#00f7ff;
+  z-index:-2;
+  animation:glitchBottom 2s infinite linear alternate-reverse;
+}
+
+@keyframes glitchTop{
+  0%{transform:translate(3px,-3px);}
+  50%{transform:translate(-3px,3px);}
+  100%{transform:translate(2px,-2px);}
+}
+
+@keyframes glitchBottom{
+  0%{transform:translate(-3px,3px);}
+  50%{transform:translate(3px,-3px);}
+  100%{transform:translate(-2px,2px);}
+}
+
+@keyframes flicker{
+  0%,18%,22%,25%,53%,57%,100%{opacity:1;}
+  20%,24%,55%{opacity:0.4;}
+}
+
+.subtitle{
+  margin-top:20px;
+  font-size:1.5rem;
+  color:#c084ff;
+  letter-spacing:3px;
+}
+
+.button{
+  margin-top:50px;
+  padding:15px 40px;
+  font-size:1.2rem;
+  border:2px solid #a200ff;
+  background:transparent;
+  color:white;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.button:hover{
+  background:#a200ff;
+  box-shadow:0 0 20px #a200ff,0 0 40px #6a00ff;
+}
+</style>
+</head>
+
+<body>
+
+<div class="background"></div>
+<div class="overlay"></div>
+
+<!-- Music -->
+<audio autoplay loop>
+  <source src="/footer/jjk-theme.mp3" type="audio/mpeg">
+</audio>
+
+<div class="container">
+  <div class="title">JUJUTSU KAISEN</div>
+  <div class="subtitle">Domain Expansion</div>
+  <button class="button">ENTER</button>
+</div>
+
+</body>
+</html>
